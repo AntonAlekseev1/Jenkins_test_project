@@ -9,16 +9,32 @@ pipeline {
             }
         }
         stage('Build') {
-            
+            steps {
+                script {
+                    echo 'Build'
+                }
+            }
         }
         stage('Test') {
-            
+            steps {
+                script {
+                    echo 'Test'
+                }
+            }            
         }
         stage('Package') {
-            
+            steps {
+                script {
+                    echo 'Package'
+                }
+            }            
         }
         stage('Push'){
-            
+            steps {
+                script {
+                    echo 'Push'
+                }
+            }            
         }
     }
 }
