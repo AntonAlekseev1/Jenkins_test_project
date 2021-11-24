@@ -1,7 +1,7 @@
 pipeline {
     stages {
         stage('Prepare') {
-            
+          git checkout  
         }
         stage('Build') {
             
