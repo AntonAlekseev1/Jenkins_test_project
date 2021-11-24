@@ -1,7 +1,12 @@
 pipeline {
+    agent any
     stages {
         stage('Prepare') {
-          git checkout  
+            steps {
+                script {
+                def repo = checkout scm
+                }
+            }
         }
         stage('Build') {
             
