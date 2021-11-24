@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     echo 'Build'
-                    sh './mvnw compile'
+                    sh 'mvn compile'
                 }
             } 
         }
@@ -13,14 +13,14 @@ pipeline {
             steps {
                 script {
                     echo 'Test'
-                    sh './mvnw test'
+                    sh 'mvn test'
                 }
             }            
         }
         stage('Package') {
             steps {
                 script {
-                sh './mvnw package'
+                sh 'mvn package -Dmaven.test.skip'
                     echo 'Package'
                 }
             }            
