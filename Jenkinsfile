@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Run local'){
             steps {
-                script {
+                dir('/var/lib/jenkins/workspace/module_pipeline_master/target') {
                     sh 'java -jar example-app.jar'
                 }
             }            
