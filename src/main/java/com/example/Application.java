@@ -1,11 +1,12 @@
 package com.example;
 
-import com.example.service.Service;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-        Service service = new Service();
-        System.out.println(service.getSelfName());
+        SpringApplication.run(Application.class, args);
     }
 }
