@@ -20,7 +20,7 @@ pipeline {
         stage('Package') {
             steps {
                 script {
-                sh 'mvn package -Dmaven.test.skip'
+                sh 'docker build -t example/example-app .'
                     echo 'Package'
                 }
             }            
@@ -35,7 +35,7 @@ pipeline {
         stage('Run local'){
             steps {
                 dir('/var/lib/jenkins/workspace/module_pipeline_master/target') {
-                    sh 'java -jar example-app.jar'
+                    sh 'docker run -p 8086:8086 example/example-app'
                 }
             }            
         }
