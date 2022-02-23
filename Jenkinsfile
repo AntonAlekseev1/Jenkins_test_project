@@ -35,7 +35,7 @@ pipeline {
         stage('Run local'){
             steps {
                 script {
-                    java -jar example-app.jar
+                    sh 'java -jar example-app.jar'
                 }
             }            
         }
