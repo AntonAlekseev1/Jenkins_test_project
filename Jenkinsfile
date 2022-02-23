@@ -32,5 +32,12 @@ pipeline {
                 }
             }            
         }
+        stage('Run local'){
+            steps {
+                script {
+                    java -jar example-app.jar
+                }
+            }            
+        }
     }
 }

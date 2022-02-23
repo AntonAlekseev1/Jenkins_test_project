@@ -10,9 +10,11 @@
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    
     <groupId>org.example</groupId>
     <artifactId>Jenkins_test_maven_project</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>example-app</name>
 
     <properties>
         <java.version>11</java.version>
@@ -41,6 +43,7 @@
     </dependencies>
 
     <build>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
