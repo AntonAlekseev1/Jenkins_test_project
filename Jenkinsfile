@@ -20,8 +20,16 @@ pipeline {
         stage('Package') {
             steps {
                 script {
-                sh 'docker build -t example/example-app .'
+                sh 'mvn package -Dmaven.test.skip'
                     echo 'Package'
+                }
+            }            
+        }
+        stage('Build Docker image') {
+            steps {
+                script {
+                sh 'docker build -t example/example-app .'
+                    echo 'Build Docker image'
                 }
             }            
         }
