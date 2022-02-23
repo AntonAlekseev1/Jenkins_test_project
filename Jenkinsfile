@@ -42,8 +42,8 @@ pipeline {
         }
         stage('Run local'){
             steps {
-                dir('/var/lib/jenkins/workspace/module_pipeline_master/target') {
-                    sh 'docker run -p 8086:8086 example/example-app'
+                script {
+                    sh 'docker run -d -p 8086:8086 example/example-app'
                 }
             }            
         }
